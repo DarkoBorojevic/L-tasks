@@ -18,22 +18,24 @@ use App\Http\Controllers\TaskController;
 |
 */
 
+// get routes
 Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
-Route::post('/register', [RegisterController::class, 'store']);
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::get('/tasks', [TaskController::class, 'index'])->name('tasks');
+
+Route::get('/edit/{task}', [TaskController::class, 'edit'])->name('edit');
+
+// post routes
+Route::post('/tasks', [TaskController::class, 'store']);
+
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'index'])->name('logout');
-
-Route::get('/tasks', [TaskController::class, 'index'])->name('tasks');
-
-Route::post('/tasks', [TaskController::class, 'store']);
-
-Route::get('/edit/{task}', [TaskController::class, 'edit'])->name('edit');
