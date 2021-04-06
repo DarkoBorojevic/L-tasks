@@ -25,7 +25,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 This is a Laravel task list web application example project.
 
 ## About L-tasks
-This is a starter Laravel-8 project that has a basic login-register user system in place and CRUD system for tasks list. UI has a modern Tailwind CSS design. Please note that I have added the code to a <em>master</em> branch, rather than the <em>main</em> branch. So the project consist of two branches because I wanted to leave the license and my readme file separate from the core Laravel installation which has its own default readme.
+This is a starter Laravel-8 project that has a basic login-register user system in place and CRUD system for tasks list. UI has a modern Tailwind CSS design. Please note that I have left the <em>master</em> branch as the default git branch, rather than the <em>main</em> branch.
 
 ## Database
 In this example, I have used the latest PostgreSql distribution. Backup SQL file is <strong>postgre-ltasks.sql</strong> and it is located in the master branch. Default login credentials to enter application are: admin@name.com, password 1234.  
