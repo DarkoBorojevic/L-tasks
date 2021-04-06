@@ -59,20 +59,20 @@ class TaskController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         
+        $task = Task::find($request->id);
+
         $this->validate($request, [
 
             'body' => ['required', 'max:255']
 
         ]);
 
-        auth()->user()->tasks()->create([
+        $task->body = $request->body;
 
-            'body' => $request->body
-
-        ]);
+        $task->save();
 
         return redirect()->route('tasks')->with('status', 'You have updated a task');
 

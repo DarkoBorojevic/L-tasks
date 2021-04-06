@@ -7,7 +7,7 @@
 
         @if (isset($task))
 
-        <form action="{{ route('tasks') }}" method="POST">
+        <form action="{{ route('update') }}" method="POST">
 
             @csrf
 
@@ -16,6 +16,8 @@
                     {{ session('status') }}
                 </div><br>
             @endif
+
+            <input type="hidden" name="id" id="id" value="{{ $task->id }}">
 
             <div class="mb-4">
                 <label for="body" class="sr-only">Body</label>
@@ -28,7 +30,7 @@
             </div>
 
             <div class="mb-4">
-                <input type="submit" name="add" id="add" value="Update task" class="bg-purple-500 text-white px-4 py-3 rounded font-medium">
+                <input type="submit" name="update" id="update" value="Update task" class="bg-purple-500 text-white px-4 py-3 rounded font-medium">
             </div>
 
         </form>
