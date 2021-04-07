@@ -45,10 +45,7 @@
                 <p class="mb-2">Owner: {{ $task->user->email }} / {{ $task->created_at->diffForHumans() }}</p>
                 <p class="text-green-400 mb-2">{{ $task->body }}</p>
                 <div class="flex items-center">
-                    <form action="" method="POST">
-                        @csrf
-                        <button type="submit" class="bg-red-500 text-white px-4 py-3 mr-1 rounded font-medium">Delete</button>
-                    </form>
+                    <a href="{{ route('delete', $task->id) }}" class="bg-red-500 text-white px-4 py-3 mr-1 rounded font-medium">Delete</a>
                     <a href="{{ route('edit', $task->id) }}" class="bg-green-500 text-white px-4 py-3 rounded font-medium">Edit</a>
                 </div>
             </div>

@@ -31,10 +31,14 @@ Route::get('/tasks', [TaskController::class, 'index'])->name('tasks');
 
 Route::get('/edit/{task}/', [TaskController::class, 'edit'])->name('edit');
 
+Route::get('/delete/{task}/', [TaskController::class, 'delete'])->name('delete');
+
 // post routes
 Route::post('/tasks', [TaskController::class, 'store']);
 
 Route::post('/tasks', [TaskController::class, 'update'])->name('update');
+
+Route::post('/tasks', [TaskController::class, 'destroy'])->name('destroy');
 
 Route::post('/register', [RegisterController::class, 'store']);
 

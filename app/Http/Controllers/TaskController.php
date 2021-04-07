@@ -78,8 +78,17 @@ class TaskController extends Controller
 
     }
 
-    public function destroy(Task $task)
+    public function delete(Task $task)
     {
+
+        return view('tasks.delete')->with('task', $task);
+
+    }
+
+    public function destroy(Request $request)
+    {
+
+        $task = Task::find($request->id);
 
         $task->delete();
 
